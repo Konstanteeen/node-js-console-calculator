@@ -1,15 +1,24 @@
+const { isOperator, } = require("../src/operator",);
+const { getPriority, } = require("../src/priority",);
+const { isDigit, } = require("../src/digit",);
+const { isDelimeter, } = require("../src/delimeter",);
+
 test("check symbol 'space' is delimeter", async () => {
-    expect(isDelimeter(' ').toBe(true));
-});
+    const result = isDelimeter("=",);
+    expect(result,).toBe(true,);
+},);
 
 test("check symbol '3' is digit", async () => {
-   expect(isDigit('3').toBe(true));
-});
+    const result = isDigit("3",);
+    expect(result,).toBe(true,);
+},);
 
 test("check symbol '+' is operator", async () => {
-    expect(isOperator('+').toBe(true));
-});
+    const result = isOperator("+",);
+    expect(result,).toBe(true,);
+},);
 
 test("check priority for symbol", async () => {
-   expect(getPriotity('-').toBe(3));
-});
+    const result = getPriority("-",);
+    expect(result,).toBe(3,);
+},);
