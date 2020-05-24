@@ -1,29 +1,22 @@
 module.exports = {
-    env: {
-        browser: true,
-        es6: true,
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
     },
-    extends: "eslint:recommended",
-    globals: {
-        Atomics: "readonly",
-        SharedArrayBuffer: "readonly",
+    "extends": "airbnb-base/legacy",
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
     },
-    parserOptions: {
-        ecmaVersion: 2018,
-        sourceType: "module",
+    "parserOptions": {
+        "ecmaVersion": 11,
+        "sourceType": "module"
     },
-    rules: {
-    // enable additional rules
-        "indent": ["error", 4,],
-        "linebreak-style": ["error", "unix",],
-        "quotes": ["error", "double",],
-        "semi": ["error", "always",],
-
-        // override default options for rules from base configurations
-        "comma-dangle": ["error", "always",],
-        "no-cond-assign": ["error", "always",],
-
-        // disable rules from base configurations
-        "no-console": "off",
-    },
+    "rules": {
+        "node/no-unpublished-require": 0,
+        "jsdoc/no-undefined-types": 1,
+        "no-restricted-syntax": 1,
+        "no-await-in-loop": 0,
+    }
 };
