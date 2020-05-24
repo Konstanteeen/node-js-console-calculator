@@ -27,7 +27,7 @@ test('check convert expression with division to revers polish notation', async (
 test('check convert expression with several operation to revers polish notation', async () => {
   const expression = '1+4-5*7';
   const result = ReversePolishNotation.conversionExpressionToRpn(expression);
-  expect(result).toBe('1 4 5 7 * - + ');
+  expect(result).toBe('1 4 + 5 7 * - ');
 });
 
 test('check convert expression with brackets operation to revers polish notation', async () => {
