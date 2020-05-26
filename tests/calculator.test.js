@@ -1,4 +1,5 @@
 const { ReversePolishNotation } = require('../src/reversePolishNotation');
+const { conversionWithUnaryMinus } = require('../src/unaryMinus');
 
 test('add operation check', async () => {
   const expression = '4+5';
@@ -61,4 +62,20 @@ test('get negative number', async () => {
   const resultConvertToRpn = ReversePolishNotation.conversionExpressionToRpn(expression);
   const resultCalculation = ReversePolishNotation.calculateRpn(resultConvertToRpn);
   expect(resultCalculation).toBe(-10);
+});
+
+test('check calculate with unary minus in begin expression', async () => {
+  const expression = '-1+5';
+  const expressionAfterConversionUnaryMinus = conversionWithUnaryMinus(expression);
+  const resultConvertToRpn = ReversePolishNotation.conversionExpressionToRpn(expressionAfterConversionUnaryMinus);
+  const resultCalculation = ReversePolishNotation.calculateRpn(resultConvertToRpn);
+  expect(resultCalculation).toBe(4);
+});
+
+test('check calculate with unary minus in expression', async () => {
+  const expression = '1+(-5)';
+  const expressionAfterConversionUnaryMinus = conversionWithUnaryMinus(expression);
+  const resultConvertToRpn = ReversePolishNotation.conversionExpressionToRpn(expressionAfterConversionUnaryMinus);
+  const resultCalculation = ReversePolishNotation.calculateRpn(resultConvertToRpn);
+  expect(resultCalculation).toBe(-4);
 });
