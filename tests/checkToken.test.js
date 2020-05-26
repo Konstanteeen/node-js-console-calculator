@@ -21,7 +21,7 @@ test("check symbol '+' is operator", async () => {
 
 test('check priority for symbol', async () => {
   const result = getPriority('-');
-  expect(result).toBe(2);
+  expect(result).toBe(1);
 });
 
 test('check expression by correct brackets', async () => {
