@@ -1,4 +1,4 @@
-const operationList = [
+const operationsList = [
   {
     operator: '+',
     precedence: 1,
@@ -21,18 +21,18 @@ const operationList = [
   }
 ];
 
-const hasOperator = (token) => operationList.some(({ operator }) => operator === token);
+const hasOperator = (symbol) => operationsList.some(({ operator }) => operator === symbol);
 
-const getPrecedence = (token) => {
-  const result = operationList.find(({ operator }) => operator === token);
-  return result.precedence;
+const getPrecedence = (symbol) => {
+  const operationByOperator = operationsList.find(({ operator }) => operator === symbol);
+  return operationByOperator.precedence;
 };
 
-const calculateRpnExpression = (token, a, b) => {
-  const result = operationList.find(({ operator }) => operator === token);
+const calculateRpnExpression = (symbol, a, b) => {
+  const result = operationsList.find(({ operator }) => operator === symbol);
   return result.func(a, b);
 };
 
 module.exports = {
-  operationList, hasOperator, getPrecedence, calculateRpnExpression
+  operationsList, hasOperator, getPrecedence, calculateRpnExpression
 };
