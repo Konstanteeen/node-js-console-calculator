@@ -2,22 +2,22 @@ const operationList = [
   {
     operator: '+',
     precedence: 1,
-    fn: (a, b) => b + a
+    func: (a, b) => b + a
   },
   {
     operator: '-',
     precedence: 1,
-    fn: (a, b) => b - a
+    func: (a, b) => b - a
   },
   {
     operator: '*',
     precedence: 2,
-    fn: (a, b) => b * a
+    func: (a, b) => b * a
   },
   {
     operator: '/',
     precedence: 2,
-    fn: (a, b) => b / a
+    func: (a, b) => b / a
   }
 ];
 
@@ -30,7 +30,7 @@ const getPrecedence = (token) => {
 
 const calculateRpnExpression = (token, a, b) => {
   const result = operationList.find(({ operator }) => operator === token);
-  return result.fn(a, b);
+  return result.func(a, b);
 };
 
 module.exports = {
