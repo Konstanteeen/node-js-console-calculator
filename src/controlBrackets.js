@@ -9,4 +9,11 @@ const checkBrackets = (expression) => {
   return stack.length === 0;
 };
 
-module.exports = { checkBrackets };
+const isBracket = (symbol) => {
+  if (('()'.indexOf(symbol) !== -1)) {
+    return true;
+  }
+  return false;
+};
+
+module.exports = { checkBrackets, isBracket };
